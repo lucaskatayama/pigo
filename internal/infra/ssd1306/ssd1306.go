@@ -3,7 +3,6 @@ package ssd1306
 import (
 	"image"
 	"image/color"
-	"log"
 
 	"github.com/lucaskatayama/pigo/internal/infra/icons"
 	"github.com/lucaskatayama/pigo/internal/ui/fonts"
@@ -97,7 +96,5 @@ func (ssd *SSD1306Display) DrawBytes(b []byte, x, y int, dx, dy int) {
 }
 
 func (ssd *SSD1306Display) Flush() {
-	if err := ssd.Dev.Draw(ssd.Bounds, ssd.frame, image.Point{}); err != nil {
-		log.Fatal("failed to draw")
-	}
+	ssd.Dev.Write(ssd.frame.Pix)
 }

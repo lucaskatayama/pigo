@@ -5,6 +5,7 @@ import (
 
 	"github.com/lucaskatayama/pigo/internal/core/internet"
 	"github.com/lucaskatayama/pigo/internal/core/speedtest"
+	"github.com/lucaskatayama/pigo/internal/core/upload"
 	"github.com/lucaskatayama/pigo/internal/infra/icons"
 )
 
@@ -30,6 +31,11 @@ var DisplayMenu = &Menu{Items: []Item{}, Sel: 0}
 
 func init() {
 	a := []Item{
+		{
+			Icon:  icons.IconCloudUpload,
+			Label: "Auto Upload",
+			Sub:   upload.New(),
+		},
 		{
 			Icon:  icons.IconUpload,
 			Label: "Upload",

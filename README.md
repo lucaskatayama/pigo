@@ -1,6 +1,6 @@
 # PiGo
 
-A project using Golang for Raspberry PI.
+One button menu with Raspberry Pi and Golang
 
 ## Hardware
 
